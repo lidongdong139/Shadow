@@ -67,6 +67,7 @@ public class HostApplication extends Application {
             String[] hostWhiteList = new String[]{
                     "androidx.test.espresso",//这个包添加是为了general-cases插件中可以访问测试框架的类
                     "com.tencent.shadow.test.lib.plugin_use_host_code_lib.interfaces",
+                    "com.bumptech.glide",
                     "com.bumptech.glide.**"//测试插件访问宿主白名单类
             };
             LoadParameters loadParameters = new LoadParameters(null,

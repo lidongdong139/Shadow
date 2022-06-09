@@ -60,6 +60,8 @@ dependencies {
     pluginCompileOnly 'com.tencent.shadow.core:runtime'
     pluginCompileOnly 'com.github.bumptech.glide:glide:4.5.0'
     pluginCompileOnly 'com.github.bumptech.glide:compiler:4.5.0'
+    normalImplementation 'com.github.bumptech.glide:glide:4.5.0'
+    normalImplementation 'com.github.bumptech.glide:compiler:4.5.0'
 }
 
 buildscript {

@@ -31,6 +31,7 @@ public class TestListActivity extends Activity {
         }
 
         Glide.with(this).load("");
+        //        Glide.with(getBaseContext()).load("");
         ListView listView = findViewById(R.id.al_list);
         listView.setAdapter(new InnerAdapter());
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
