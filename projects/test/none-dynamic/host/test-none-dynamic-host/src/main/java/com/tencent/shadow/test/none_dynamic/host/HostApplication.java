@@ -24,6 +24,7 @@ import android.os.Build;
 import android.os.Parcel;
 import android.os.StrictMode;
 
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.tencent.shadow.core.common.InstalledApk;
 import com.tencent.shadow.core.common.LoggerFactory;
 import com.tencent.shadow.core.load_parameters.LoadParameters;
@@ -117,6 +118,9 @@ public class HostApplication extends Application {
         super.onCreate();
         sApp = this;
 
+        ARouter.openLog();
+        ARouter.openDebug();
+        ARouter.init(this);
         ShadowPluginLoader loader = mPluginLoader = new TestPluginLoader(getApplicationContext());
         loader.onCreate();
         DelegateProviderHolder.setDelegateProvider(loader.getDelegateProviderKey(), loader);

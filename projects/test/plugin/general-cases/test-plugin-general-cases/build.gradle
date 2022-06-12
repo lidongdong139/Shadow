@@ -11,6 +11,11 @@ android {
         versionCode project.VERSION_CODE
         versionName project.VERSION_NAME
         testInstrumentationRunner "com.tencent.shadow.test.plugin.general_cases.app.CustomAndroidJUnitRunner"
+        javaCompileOptions{
+            annotationProcessorOptions{
+                arguments = [AROUTER_MODULE_NAME:project.getName()]
+            }
+        }
     }
 
     buildTypes {
@@ -62,6 +67,8 @@ dependencies {
     pluginCompileOnly 'com.github.bumptech.glide:compiler:4.5.0'
     normalImplementation 'com.github.bumptech.glide:glide:4.5.0'
     normalImplementation 'com.github.bumptech.glide:compiler:4.5.0'
+    implementation 'com.alibaba:arouter-api:1.4.1'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
 }
 
 buildscript {
