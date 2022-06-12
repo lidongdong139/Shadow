@@ -11,6 +11,11 @@ android {
         versionCode project.VERSION_CODE
         versionName project.VERSION_NAME
         testInstrumentationRunner "com.tencent.shadow.test.plugin.general_cases.app.CustomAndroidJUnitRunner"
+        javaCompileOptions{
+            annotationProcessorOptions{
+                arguments = [AROUTER_MODULE_NAME:project.getName()]
+            }
+        }
     }
 
     buildTypes {
@@ -58,6 +63,8 @@ dependencies {
     //Shadow Transform后业务代码会有一部分实际引用runtime中的类
     //如果不以compileOnly方式依赖，会导致其他Transform或者Proguard找不到这些类
     pluginCompileOnly 'com.tencent.shadow.core:runtime'
+    implementation 'com.alibaba:arouter-api:1.4.1'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
 }
 
 buildscript {

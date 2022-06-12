@@ -11,11 +11,12 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.tencent.shadow.test.plugin.general_cases.R;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Route(path = "/test/TestListActivity")
 public class TestListActivity extends Activity {
     List<String> mItemList = new ArrayList<>();
 

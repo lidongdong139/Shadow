@@ -25,6 +25,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+
 public class MainActivity extends Activity {
 
     @Override
@@ -39,11 +41,12 @@ public class MainActivity extends Activity {
         application.loadPlugin(PART_MAIN, new Runnable() {
             @Override
             public void run() {
-                Intent pluginIntent = new Intent();
-                pluginIntent.setClassName(getPackageName(), "com.tencent.shadow.test.plugin.general_cases.lib.usecases.activity.TestListActivity");
-                pluginIntent.putStringArrayListExtra("activities", TestComponentManager.sActivities);
-                Intent intent = application.getPluginLoader().getMComponentManager().convertPluginActivityIntent(pluginIntent);
-                startActivity(intent);
+//                Intent pluginIntent = new Intent();
+//                pluginIntent.setClassName(getPackageName(), "com.tencent.shadow.test.plugin.general_cases.lib.usecases.activity.TestListActivity");
+//                pluginIntent.putStringArrayListExtra("activities", TestComponentManager.sActivities);
+//                Intent intent = application.getPluginLoader().getMComponentManager().convertPluginActivityIntent(pluginIntent);
+//                startActivity(intent);
+                ARouter.getInstance().build("/test/TestListActivity").navigation();
             }
         });
 
