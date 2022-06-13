@@ -13,6 +13,10 @@ import android.widget.TextView;
 
 import com.tencent.shadow.test.plugin.general_cases.R;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +33,7 @@ public class TestListActivity extends Activity {
             mItemList.addAll(activities);
         }
 
+        EventBus.getDefault().register(this);
         ListView listView = findViewById(R.id.al_list);
         listView.setAdapter(new InnerAdapter());
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -43,6 +48,11 @@ public class TestListActivity extends Activity {
                 }
             }
         });
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void emptyEvent(EmptyEvent event){
+
     }
 
     class InnerAdapter extends BaseAdapter {
