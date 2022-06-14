@@ -49,6 +49,7 @@ dependencies {
     implementation project(':custom-view')
     implementation "androidx.test.espresso:espresso-idling-resource:$espresso_version"
     implementation project(':plugin-use-host-code-lib')
+    implementation project(":slidingmenu")
 }
 
 def createCopyTask(projectName, buildType, name, apkName) {
