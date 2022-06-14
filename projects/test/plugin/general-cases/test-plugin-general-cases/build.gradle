@@ -47,6 +47,8 @@ dependencies {
     pluginCompileOnly "androidx.test.espresso:espresso-idling-resource:$espresso_version"
     normalImplementation "androidx.test.espresso:espresso-idling-resource:$espresso_version"
     pluginCompileOnly project(':plugin-use-host-code-lib')
+    pluginCompileOnly project(':slidingmenu')
+    normalImplementation project(':slidingmenu')
 
     testImplementation "junit:junit:$junit_version"
     androidTestImplementation "androidx.test:core:$androidx_test_version"
