@@ -23,6 +23,7 @@ import static com.tencent.shadow.sample.constant.Constant.PART_KEY_PLUGIN_BASE;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -57,6 +58,12 @@ public class MainActivity extends Activity {
         partKeySpinner.setAdapter(partKeysAdapter);
 
         rootView.addView(partKeySpinner);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                System.exit(0);
+            }
+        },5000);
 
         Button startPluginButton = new Button(this);
         startPluginButton.setText(R.string.start_plugin);
@@ -101,4 +108,9 @@ public class MainActivity extends Activity {
 
     }
 
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
 }
