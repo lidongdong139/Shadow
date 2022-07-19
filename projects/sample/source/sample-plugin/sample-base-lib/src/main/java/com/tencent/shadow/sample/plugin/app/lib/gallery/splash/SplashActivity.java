@@ -22,6 +22,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 import com.tencent.shadow.sample.plugin.app.lib.base.R;
 import com.tencent.shadow.sample.plugin.app.lib.gallery.MainActivity;
@@ -37,7 +38,9 @@ public class SplashActivity extends Activity {
 
         mSplashAnimation = new SplashAnimation(this);
         mSplashAnimation.start();
-
+        Intent intent = getIntent();
+        String stringExtra = intent.getStringExtra("token");
+        Log.e("SplashActivity","stringExtra=="+stringExtra);
         mSplashAnimation.setAnimationListener(new ISplashAnimation.AnimationListener() {
             @Override
             public void onAnimationEnd() {

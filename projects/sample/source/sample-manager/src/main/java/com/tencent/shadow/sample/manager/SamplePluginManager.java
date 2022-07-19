@@ -136,6 +136,7 @@ public class SamplePluginManager extends FastPluginManager {
                         pluginIntent.replaceExtras(extras);
                     }
                     Intent intent = mPluginLoader.convertActivityIntent(pluginIntent);
+                    intent.putExtra("token","111");
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     mPluginLoader.startActivityInPluginProcess(intent);
                 } catch (Exception e) {
